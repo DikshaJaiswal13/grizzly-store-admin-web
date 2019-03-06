@@ -1,0 +1,27 @@
+create table Login(
+	Username varchar2(20) Not Null,
+	Password varchar2(20) Not Null,
+	User_Type varchar2(20) Not Null,
+	Status varchar2(20) Not Null,
+	CONSTRAINT f1
+  	FOREIGN KEY (Username)
+   	REFERENCES Profile(Id)
+	);
+
+create table Profile(
+	Id varchar2(20) primary key,
+	Name varchar2(20) Not Null,
+	Designation varchar2(20) Not null,
+	Office varchar2(20) Not null
+	);
+
+create table Product(
+	pid varchar2(20) primary key,
+	Pname varchar2(20) Not Null,
+	Brand varchar2(20) Not Null,
+	Category varchar2(20) Not Null,
+	Rating Number Not Null,
+	Price Number Not Null,
+	Description varchar2(100));
+
+insert into product values('101','Trimmer','Phillips','Personal Care',4.7,2500,'This is a Trimmer');
